@@ -12,9 +12,16 @@ import StripeCheckoutButton from "../../components/stripe-button/stripe-button.c
 
 import "./checkout.style.scss";
 
+import {
+  CheckoutPageContainer,
+  CheckoutHeader,
+  Total,
+  WaringTest,
+} from "./checkout.style";
+
 const CheckoutPage = ({ cartItems, total }) => (
-  <div className="checkout-page">
-    <div className="checkout-header">
+  <CheckoutPageContainer>
+    <CheckoutHeader>
       <div className="header-block">
         <span>Product</span>
       </div>
@@ -30,20 +37,20 @@ const CheckoutPage = ({ cartItems, total }) => (
       <div className="header-block">
         <span>Remove</span>
       </div>
-    </div>
+    </CheckoutHeader>
     {cartItems.map((cartItem) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
-    <div className="total">
+    <Total>
       <span>TOTAL : ${total}</span>
-    </div>
-    <div className="test-waring">
+    </Total>
+    <WaringTest>
       *Please use the following test credt card for payments*
       <br />
       4242 4242 4242 4242 - Exp:01/22 - CVV:123
-    </div>
+    </WaringTest>
     <StripeCheckoutButton price={total} />
-  </div>
+  </CheckoutPageContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
