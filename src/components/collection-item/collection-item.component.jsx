@@ -9,6 +9,10 @@ import "./collection-item.style.scss";
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+
+  const addedCartAlert = () => {
+    alert("Item added to cart");
+  };
   
   return (
     <div className="collection-item">
@@ -22,7 +26,13 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="name">{name}</span>
         <span className="price">${price}</span>
       </div>
-      <CustomButton onClick={() => addItem(item)} inverted>
+      <CustomButton
+        onClick={() => {
+          addItem(item);
+          addedCartAlert();
+        }}
+        inverted
+      >
         Add to cart
       </CustomButton>
     </div>
