@@ -31,13 +31,17 @@
     justify-content: flex-end;
 
     @media screen and (max-width:800px){
-      padding: 10px;
-      width: 80%;
+      width: 90%;
     }
 
     .option {
       padding: 10px 15px;
       cursor: pointer;
+
+    @media screen and (max-width:800px){
+      padding:5px 10px;
+      cursor: pointer;
+    }
     }
   }
 }
