@@ -19,7 +19,7 @@ const CheckoutPage = ({ cartItems, total }) => (
         <span>Product</span>
       </div>
       <div className="header-block">
-        <span>Description</span>
+        <span>Name</span>
       </div>
       <div className="header-block">
         <span>Quantity</span>
@@ -28,7 +28,7 @@ const CheckoutPage = ({ cartItems, total }) => (
         <span>Price</span>
       </div>
       <div className="header-block">
-        <span>Remove</span>
+        <span></span>
       </div>
     </div>
     {cartItems.map((cartItem) => (
@@ -39,6 +39,8 @@ const CheckoutPage = ({ cartItems, total }) => (
     </div>
     <div className="test-waring">
       *Please use the following test credt card for payments*
+      <br />
+      *クレジットカードの番号は下記をご利用ください*
       <br />
       4242 4242 4242 4242 - Exp:01/22 - CVV:123
     </div>

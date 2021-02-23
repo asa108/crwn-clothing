@@ -11,6 +11,11 @@ $main-color: black;
   position: relative;
   margin: 45px 0;
 
+       @media screen and (max-width:800px){
+       width: 280px;
+        margin: 0 auto;
+    }
+
   .form-input {
     background: none;
     background-color: white;
