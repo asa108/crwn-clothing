@@ -7,6 +7,10 @@
   position: relative;
   margin: 0 5px;
 
+  //  @media screen and (max-width:800px){
+  //      width: 90vw;
+  //   }
+
   .image {
     width: 100%;
     height: 95%;
@@ -41,7 +45,7 @@
       }
   }
 
-      @media screen and (max-width:800px){
+    @media screen and (max-width:800px){
       width: 40vw;
 
      &:hover{
@@ -52,7 +56,7 @@
       .custom-button{
         opacity: unset;
       }
-  }
+       }
     }
 
   .collection-footer {
@@ -72,7 +76,7 @@
 
     .price {
       // width: 10%;
-          @media screen and (max-width:800px){
+     @media screen and (max-width:800px){
        font-size: 15px;
     }
     }
