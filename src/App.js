@@ -14,6 +14,8 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
+import { GlobalStyle } from "./global.style";
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
@@ -43,20 +45,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/checkout" component={CheckoutPage} />
+        <GlobalStyle />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/checkout" component={CheckoutPage} />
 
-          <Route
-            exact
-            path="/signin"
-            render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-            }
-          />
-        </Switch>
+            <Route
+              exact
+              path="/signin"
+              render={() =>
+                this.props.currentUser ? (
+                  <Redirect to="/" />
+                ) : (
+                  <SignInAndSignUp />
+                )
+              }
+            />
+          </Switch>
       </div>
     );
   }
